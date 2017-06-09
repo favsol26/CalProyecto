@@ -7,7 +7,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-
 public class Calculator extends AppCompatActivity {
 
     public static final String ZERO = "0";
@@ -22,12 +21,11 @@ public class Calculator extends AppCompatActivity {
     public static final String NINE = "9";
 
 
-    //public static final String PLUS = "+";
-    Button zero, one, two, three, four, five, six, seven, eight, nine,
-            point, sign, product, divide, minus, plus, erase, equals, history, clean;
+    Button zero, one, two, three, four,
+            five, six, seven, eight, nine,
+            point, sign, product, divide, minus,
+            plus, erase, equals, history, clean;
     TextView exit;
-    //double number, num, result;
-    //String operator;
     String Variable;
 
     @Override
@@ -47,105 +45,103 @@ public class Calculator extends AppCompatActivity {
 
 
         zero = (Button) findViewById(R.id.button_0);
-        zero.setOnClickListener(new View.OnClickListener(){
+        zero.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 exit = (TextView) findViewById(R.id.screen);
-                Variable = exit.getText().toString()+ZERO;
+                Variable = exit.getText().toString() + ZERO;
                 exit.setText(Variable);
             }
         });
         one = (Button) findViewById(R.id.button_1);
-        one.setOnClickListener(new View.OnClickListener(){
+        one.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 exit = (TextView) findViewById(R.id.screen);
-                Variable = exit.getText().toString()+ONE;
+                Variable = exit.getText().toString() + ONE;
                 exit.setText(Variable);
             }
         });
         two = (Button) findViewById(R.id.button_2);
-        two.setOnClickListener(new View.OnClickListener(){
+        two.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 exit = (TextView) findViewById(R.id.screen);
-                Variable = exit.getText().toString()+TWO;
+                Variable = exit.getText().toString() + TWO;
                 exit.setText(Variable);
             }
         });
         three = (Button) findViewById(R.id.button_3);
-        three.setOnClickListener(new View.OnClickListener(){
+        three.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 exit = (TextView) findViewById(R.id.screen);
-                Variable = exit.getText().toString()+THREE;
+                Variable = exit.getText().toString() + THREE;
                 exit.setText(Variable);
             }
         });
         four = (Button) findViewById(R.id.button_4);
-        four.setOnClickListener(new View.OnClickListener(){
+        four.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 exit = (TextView) findViewById(R.id.screen);
-                Variable = exit.getText().toString()+FOUR;
+                Variable = exit.getText().toString() + FOUR;
                 exit.setText(Variable);
             }
         });
         five = (Button) findViewById(R.id.button_5);
-        five.setOnClickListener(new View.OnClickListener(){
+        five.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 exit = (TextView) findViewById(R.id.screen);
-                Variable = exit.getText().toString()+FIVE;
+                Variable = exit.getText().toString() + FIVE;
                 exit.setText(Variable);
             }
         });
         six = (Button) findViewById(R.id.button_6);
-        six.setOnClickListener(new View.OnClickListener(){
+        six.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 exit = (TextView) findViewById(R.id.screen);
-                Variable = exit.getText().toString()+SIX;
+                Variable = exit.getText().toString() + SIX;
                 exit.setText(Variable);
             }
         });
-        seven= (Button) findViewById(R.id.button_7);
-        seven.setOnClickListener(new View.OnClickListener(){
+        seven = (Button) findViewById(R.id.button_7);
+        seven.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 exit = (TextView) findViewById(R.id.screen);
-                Variable = exit.getText().toString()+SEVEN;
+                Variable = exit.getText().toString() + SEVEN;
                 exit.setText(Variable);
             }
         });
         eight = (Button) findViewById(R.id.button_8);
-        eight.setOnClickListener(new View.OnClickListener(){
+        eight.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 exit = (TextView) findViewById(R.id.screen);
-                Variable = exit.getText().toString()+EIGHT;
+                Variable = exit.getText().toString() + EIGHT;
                 exit.setText(Variable);
             }
         });
         nine = (Button) findViewById(R.id.button_9);
-        nine.setOnClickListener(new View.OnClickListener(){
+        nine.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 exit = (TextView) findViewById(R.id.screen);
-                Variable = exit.getText().toString()+NINE;
+                Variable = exit.getText().toString() + NINE;
                 exit.setText(Variable);
             }
         });
 
         clean = (Button) findViewById(R.id.clean);
-        clean.setOnClickListener(new View.OnClickListener(){
+        clean.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 exit.setText("");
             }
         });
-
-
 
 
     }
