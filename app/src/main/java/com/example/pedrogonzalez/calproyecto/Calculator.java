@@ -123,8 +123,6 @@ public class Calculator extends AppCompatActivity {
                 exit = (TextView) findViewById(R.id.screen);
                 Variable = exit.getText().toString() + EIGHT;
                 exit.setText(Variable);
-
-
             }
         });
         nine = (Button) findViewById(R.id.button_9);
@@ -134,11 +132,8 @@ public class Calculator extends AppCompatActivity {
                 exit = (TextView) findViewById(R.id.screen);
                 Variable = exit.getText().toString() + NINE;
                 exit.setText(Variable);
-
-
             }
         });
-
         clean = (Button) findViewById(R.id.clean);
         clean.setOnClickListener(new View.OnClickListener() {
             @Override

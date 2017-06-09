@@ -7,270 +7,267 @@
 
 
     <TextView
+        android:id="@+id/screen"
         android:layout_width="match_parent"
         android:layout_height="150sp"
-        android:ellipsize="end"
-        android:gravity="right"
-        android:textSize="45sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/screen"
         android:background="@android:color/white"
-        />
+        android:ellipsize="end"
+        android:textSize="45sp" />
 
     <Button
+        android:id="@+id/clean"
         android:layout_width="90dp"
         android:layout_height="76sp"
-        android:id="@+id/clean"
-        android:textSize="32sp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/button_history"
+        android:background="@color/colorAccent"
         android:text="@string/button_clean"
-        android:layout_below="@+id/button_history"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="@color/colorAccent"
-        android:textColor="@color/colorTxt"/>
+        android:textColor="@color/colorTxt"
+        android:textSize="32sp" />
 
     <Button
-        android:layout_width="90dp"
-        android:layout_height="76dp"
         android:id="@+id/button_divide"
-        android:textSize="32sp"
-        android:text="@string/my_divide"
-        android:background="@color/color_background_button"
-        android:textColor="@color/colorTxt"
+        android:layout_width="90dp"
+        android:layout_height="76dp"
         android:layout_below="@+id/button_history"
-        android:layout_toRightOf="@+id/clean"
         android:layout_toEndOf="@+id/clean"
-         />
-
-
-    <Button
-        android:layout_width="90dp"
-        android:layout_height="76dp"
-        android:id="@+id/button_product"
-        android:textSize="32sp"
-        android:text="@string/product"
-        android:layout_below="@+id/button_history"
-        android:layout_toRightOf="@+id/button_divide"
-        android:layout_toEndOf="@+id/button_divide"
+        android:layout_toRightOf="@+id/clean"
         android:background="@color/color_background_button"
-        android:textColor="@color/colorTxt"/>
-
-    <Button
-        android:layout_width="90dp"
-        android:layout_height="76dp"
-        android:id="@+id/button_back"
-        android:textSize="15sp"
-        android:text="@string/back"
-        android:layout_below="@+id/button_history"
-        android:layout_toRightOf="@+id/button_product"
-        android:layout_toEndOf="@+id/button_product"
-        android:background="@color/colorAccent"
-        android:textColor="@color/colorTxt"/>
-
-    <Button
-        android:layout_width="90dp"
-        android:layout_height="76dp"
-        android:id="@+id/button_7"
-        android:textSize="32sp"
-        android:text="@string/seven"
-        android:layout_below="@+id/clean"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="@color/number"
-        android:textColor="@color/colorTxt"/>
-
-    <Button
-        android:layout_width="90dp"
-        android:layout_height="76dp"
-        android:id="@+id/button_8"
-        android:textSize="32sp"
-        android:text="@string/eight"
-        android:layout_below="@+id/button_product"
-        android:background="@color/number"
+        android:text="@string/my_divide"
         android:textColor="@color/colorTxt"
-        android:layout_toRightOf="@+id/button_7"
-        android:layout_toEndOf="@+id/button_7" />
+        android:textSize="32sp" />
+
 
     <Button
+        android:id="@+id/button_product"
         android:layout_width="90dp"
         android:layout_height="76dp"
-        android:id="@+id/button_9"
-        android:textSize="32sp"
-        android:text="@string/nine"
+        android:layout_below="@+id/button_history"
+        android:layout_toEndOf="@+id/button_divide"
+        android:layout_toRightOf="@+id/button_divide"
+        android:background="@color/color_background_button"
+        android:text="@string/product"
+        android:textColor="@color/colorTxt"
+        android:textSize="32sp" />
+
+    <Button
+        android:id="@+id/button_back"
+        android:layout_width="90dp"
+        android:layout_height="76dp"
+        android:layout_below="@+id/button_history"
+        android:layout_toEndOf="@+id/button_product"
+        android:layout_toRightOf="@+id/button_product"
+        android:background="@color/colorAccent"
+        android:text="@string/back"
+        android:textColor="@color/colorTxt"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/button_7"
+        android:layout_width="90dp"
+        android:layout_height="76dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/clean"
+        android:background="@color/number"
+        android:text="@string/seven"
+        android:textColor="@color/colorTxt"
+        android:textSize="32sp" />
+
+    <Button
+        android:id="@+id/button_8"
+        android:layout_width="90dp"
+        android:layout_height="76dp"
         android:layout_below="@+id/button_product"
-        android:layout_toRightOf="@+id/button_8"
+        android:layout_toEndOf="@+id/button_7"
+        android:layout_toRightOf="@+id/button_7"
+        android:background="@color/number"
+        android:text="@string/eight"
+        android:textColor="@color/colorTxt"
+        android:textSize="32sp" />
+
+    <Button
+        android:id="@+id/button_9"
+        android:layout_width="90dp"
+        android:layout_height="76dp"
+        android:layout_below="@+id/button_product"
         android:layout_toEndOf="@+id/button_8"
+        android:layout_toRightOf="@+id/button_8"
         android:background="@color/number"
-        android:textColor="@color/colorTxt"/>
+        android:text="@string/nine"
+        android:textColor="@color/colorTxt"
+        android:textSize="32sp" />
 
     <Button
-        android:layout_width="90dp"
-        android:layout_height="76dp"
         android:id="@+id/button_minus"
-        android:textSize="32sp"
-        android:text="@string/minus"
+        android:layout_width="90dp"
+        android:layout_height="76dp"
         android:layout_below="@+id/button_back"
-        android:layout_toRightOf="@+id/button_9"
         android:layout_toEndOf="@+id/button_9"
+        android:layout_toRightOf="@+id/button_9"
         android:background="@color/color_background_button"
-        android:textColor="@color/colorTxt"/>
+        android:text="@string/minus"
+        android:textColor="@color/colorTxt"
+        android:textSize="32sp" />
 
     <Button
-        android:layout_width="90dp"
-        android:layout_height="76dp"
         android:id="@+id/button_4"
-        android:textSize="32sp"
-        android:text="@string/four"
+        android:layout_width="90dp"
+        android:layout_height="76dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/button_7"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:background="@color/number"
-        android:textColor="@color/colorTxt"/>
+        android:text="@string/four"
+        android:textColor="@color/colorTxt"
+        android:textSize="32sp" />
 
     <Button
-        android:layout_width="90dp"
-        android:layout_height="76dp"
         android:id="@+id/button_5"
-        android:textSize="32sp"
-        android:text="@string/five"
+        android:layout_width="90dp"
+        android:layout_height="76dp"
         android:layout_below="@+id/button_8"
-        android:layout_toRightOf="@+id/button_4"
         android:layout_toEndOf="@+id/button_4"
+        android:layout_toRightOf="@+id/button_4"
         android:background="@color/number"
-        android:textColor="@color/colorTxt"/>
+        android:text="@string/five"
+        android:textColor="@color/colorTxt"
+        android:textSize="32sp" />
 
     <Button
-        android:layout_width="90dp"
-        android:layout_height="76dp"
         android:id="@+id/button_6"
-        android:textSize="32sp"
-        android:text="@string/six"
+        android:layout_width="90dp"
+        android:layout_height="76dp"
         android:layout_below="@+id/button_9"
-        android:layout_toRightOf="@+id/button_5"
         android:layout_toEndOf="@+id/button_5"
+        android:layout_toRightOf="@+id/button_5"
         android:background="@color/number"
-        android:textColor="@color/colorTxt"/>
+        android:text="@string/six"
+        android:textColor="@color/colorTxt"
+        android:textSize="32sp" />
 
     <Button
-        android:layout_width="90dp"
-        android:layout_height="76dp"
         android:id="@+id/button_plus"
-        android:textSize="32sp"
-        android:text="@string/plus"
+        android:layout_width="90dp"
+        android:layout_height="76dp"
         android:layout_below="@+id/button_minus"
-        android:layout_toRightOf="@+id/button_6"
         android:layout_toEndOf="@+id/button_6"
+        android:layout_toRightOf="@+id/button_6"
         android:background="@color/color_background_button"
-        android:textColor="@color/colorTxt"/>
+        android:text="@string/plus"
+        android:textColor="@color/colorTxt"
+        android:textSize="32sp" />
 
     <Button
-        android:layout_width="90dp"
-        android:layout_height="76dp"
         android:id="@+id/button_1"
-        android:textSize="32sp"
-        android:text="@string/one"
+        android:layout_width="90dp"
+        android:layout_height="76dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/button_4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:background="@color/number"
-        android:textColor="@color/colorTxt"/>
+        android:text="@string/one"
+        android:textColor="@color/colorTxt"
+        android:textSize="32sp" />
 
     <Button
-        android:layout_width="90dp"
-        android:layout_height="76dp"
         android:id="@+id/button_2"
-        android:textSize="32sp"
-        android:text="@string/two"
+        android:layout_width="90dp"
+        android:layout_height="76dp"
         android:layout_below="@+id/button_5"
-        android:layout_toRightOf="@+id/button_1"
         android:layout_toEndOf="@+id/button_1"
+        android:layout_toRightOf="@+id/button_1"
         android:background="@color/number"
-        android:textColor="@color/colorTxt"/>
+        android:text="@string/two"
+        android:textColor="@color/colorTxt"
+        android:textSize="32sp" />
 
     <Button
-        android:layout_width="90dp"
-        android:layout_height="76dp"
         android:id="@+id/button_3"
-        android:textSize="32sp"
-        android:text="@string/three"
+        android:layout_width="90dp"
+        android:layout_height="76dp"
         android:layout_below="@+id/button_6"
-        android:layout_toRightOf="@+id/button_2"
         android:layout_toEndOf="@+id/button_2"
+        android:layout_toRightOf="@+id/button_2"
         android:background="@color/number"
-        android:textColor="@color/colorTxt"/>
+        android:text="@string/three"
+        android:textColor="@color/colorTxt"
+        android:textSize="32sp" />
 
     <Button
 
 
-        android:layout_width="90dp"
-        android:layout_height="76dp"
         android:id="@+id/button_parenthesis"
-        android:textSize="32sp"
-        android:text="@string/parenthesis"
-        android:layout_below="@+id/button_plus"
-        android:layout_toRightOf="@+id/button_3"
-        android:layout_toEndOf="@+id/button_3"
-        android:background="@color/color_background_button"
-        android:textColor="@color/colorTxt"/>
-
-    <Button
         android:layout_width="90dp"
         android:layout_height="76dp"
+        android:layout_below="@+id/button_plus"
+        android:layout_toEndOf="@+id/button_3"
+        android:layout_toRightOf="@+id/button_3"
+        android:background="@color/color_background_button"
+        android:text="@string/parenthesis"
+        android:textColor="@color/colorTxt"
+        android:textSize="32sp" />
+
+    <Button
         android:id="@+id/button_0"
-        android:textSize="32sp"
-        android:text="@string/zero"
-        android:layout_below="@+id/button_1"
+        android:layout_width="90dp"
+        android:layout_height="76dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_below="@+id/button_1"
         android:background="@color/number"
-        android:textColor="@color/colorTxt"/>
+        android:text="@string/zero"
+        android:textColor="@color/colorTxt"
+        android:textSize="32sp" />
 
     <Button
-        android:layout_width="90dp"
-        android:layout_height="76dp"
         android:id="@+id/button_point"
-        android:textSize="32sp"
-        android:text="@string/point"
+        android:layout_width="90dp"
+        android:layout_height="76dp"
         android:layout_below="@+id/button_2"
-        android:layout_toRightOf="@+id/button_0"
         android:layout_toEndOf="@+id/button_0"
+        android:layout_toRightOf="@+id/button_0"
         android:background="@color/number"
-        android:textColor="@color/colorTxt"/>
+        android:text="@string/point"
+        android:textColor="@color/colorTxt"
+        android:textSize="32sp" />
 
     <Button
-        android:layout_width="90dp"
-        android:layout_height="76dp"
         android:id="@+id/button_sign"
-        android:textSize="32sp"
-        android:text="@string/sign"
-        android:layout_below="@+id/button_3"
-        android:layout_toRightOf="@+id/button_point"
-        android:layout_toEndOf="@+id/button_point"
-        android:background="@color/number"
-        android:textColor="@color/colorTxt"/>
-
-    <Button
         android:layout_width="90dp"
         android:layout_height="76dp"
-        android:id="@+id/button_equal"
-        android:textSize="32sp"
-        android:text="@string/equal"
-        android:layout_below="@+id/button_parenthesis"
-        android:layout_toRightOf="@+id/button_sign"
-        android:layout_toEndOf="@+id/button_sign"
-        android:background="@color/color_background_button"
-        android:textColor="@color/colorTxt"/>
+        android:layout_below="@+id/button_3"
+        android:layout_toEndOf="@+id/button_point"
+        android:layout_toRightOf="@+id/button_point"
+        android:background="@color/number"
+        android:text="@string/sign"
+        android:textColor="@color/colorTxt"
+        android:textSize="32sp" />
 
     <Button
+        android:id="@+id/button_equal"
+        android:layout_width="90dp"
+        android:layout_height="76dp"
+        android:layout_below="@+id/button_parenthesis"
+        android:layout_toEndOf="@+id/button_sign"
+        android:layout_toRightOf="@+id/button_sign"
+        android:background="@color/color_background_button"
+        android:text="@string/equal"
+        android:textColor="@color/colorTxt"
+        android:textSize="32sp" />
+
+    <Button
+        android:id="@+id/button_history"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:id="@+id/button_history"
-        android:textSize="18sp"
-        android:text="@string/history"
         android:layout_below="@+id/screen"
         android:background="@color/number"
-        android:textColor="@color/colorTxt"/>
+        android:text="@string/history"
+        android:textColor="@color/colorTxt"
+        android:textSize="18sp" />
 
 </RelativeLayout>
 
