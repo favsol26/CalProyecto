@@ -28,7 +28,7 @@ public class Calculator extends AppCompatActivity {
 
     TextView exit;
     String Variable;
-//    int num;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +55,7 @@ public class Calculator extends AppCompatActivity {
                 exit.setText(Variable);
             }
         });
+
         one = (Button) findViewById(R.id.button_1);
         one.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -155,5 +156,34 @@ public class Calculator extends AppCompatActivity {
                 }
             }
         });
+
+
+    }
+
+    private double plus(int a, int b) {
+        int result;
+        result = a + b;
+        return result;
+    }
+
+    private double minus(int a, int b) {
+        int result;
+        result = a - b;
+        return result;
+    }
+
+    private double product(int a, int b) {
+        int result;
+        result = a * b;
+        return result;
+    }
+
+    private double divide(int a, int b) {
+
+        int result = 0;
+        if (b != 0) {
+            result = a / b;
+        }
+        return result;
     }
 }
