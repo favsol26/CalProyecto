@@ -134,6 +134,8 @@ public class Calculator extends AppCompatActivity {
                 exit = (TextView) findViewById(R.id.screen);
                 Variable = exit.getText().toString() + NINE;
                 exit.setText(Variable);
+
+
             }
         });
 
