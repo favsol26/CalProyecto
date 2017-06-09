@@ -123,6 +123,8 @@ public class Calculator extends AppCompatActivity {
                 exit = (TextView) findViewById(R.id.screen);
                 Variable = exit.getText().toString() + EIGHT;
                 exit.setText(Variable);
+
+
             }
         });
         nine = (Button) findViewById(R.id.button_9);
