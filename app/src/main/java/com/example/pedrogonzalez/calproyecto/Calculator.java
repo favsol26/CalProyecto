@@ -28,6 +28,7 @@ public class Calculator extends AppCompatActivity {
 
     TextView exit;
     String Variable;
+    int result;
 
 
     @Override
@@ -143,6 +144,7 @@ public class Calculator extends AppCompatActivity {
             public void onClick(View v) {
                 exit.setText("");
             }
+
         });
 
         erase = (Button) findViewById(R.id.button_back);
@@ -156,30 +158,25 @@ public class Calculator extends AppCompatActivity {
                 }
             }
         });
-
-
     }
 
     private double plus(int a, int b) {
-        int result;
         result = a + b;
         return result;
     }
 
     private double minus(int a, int b) {
-        int result;
         result = a - b;
         return result;
     }
 
     private double product(int a, int b) {
-        int result;
         result = a * b;
         return result;
     }
 
-    private double divide(int a, int b) {
-        int result = 0;
+    private double divide(int a, int b) { 
+        int result = 0; 
         if (b != 0) {
             result = a / b;
         }
