@@ -144,6 +144,7 @@ public class Calculator extends AppCompatActivity {
             public void onClick(View v) {
                 exit.setText("");
             }
+
         });
 
         erase = (Button) findViewById(R.id.button_back);
