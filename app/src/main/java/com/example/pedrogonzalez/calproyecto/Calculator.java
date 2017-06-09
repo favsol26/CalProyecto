@@ -152,7 +152,7 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 exit = (TextView) findViewById(R.id.screen);
-                if (exit.getText() != null) {
+                if (exit.getText().length() > 0) {
                     Variable = Variable.substring(0, exit.getText().length() - 1);
                     exit.setText(Variable);
                 }
@@ -175,7 +175,8 @@ public class Calculator extends AppCompatActivity {
         return result;
     }
 
-    private double divide(int a, int b) {
+    private double divide(int a, int b) { 
+        int result = 0; 
         if (b != 0) {
             result = a / b;
         }
