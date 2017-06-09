@@ -25,8 +25,10 @@ public class Calculator extends AppCompatActivity {
             five, six, seven, eight, nine,
             point, sign, product, divide, minus,
             plus, erase, equals, history, clean;
+
     TextView exit;
     String Variable;
+//    int num;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -142,6 +144,16 @@ public class Calculator extends AppCompatActivity {
             }
         });
 
-
+        erase = (Button) findViewById(R.id.button_back);
+        erase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                exit = (TextView) findViewById(R.id.screen);
+                if (exit.getText() != null) {
+                    Variable = Variable.substring(0, exit.getText().length() - 1);
+                    exit.setText(Variable);
+                }
+            }
+        });
     }
 }
