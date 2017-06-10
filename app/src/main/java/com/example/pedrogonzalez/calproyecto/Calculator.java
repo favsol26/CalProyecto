@@ -175,6 +175,7 @@ public class Calculator extends AppCompatActivity {
                 exit.setText("");
             }
         });
+
         product = (Button) findViewById(R.id.button_product);
         product.setOnClickListener(new View.OnClickListener() {
             @Override
