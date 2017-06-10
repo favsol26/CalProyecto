@@ -158,6 +158,8 @@ public class Calculator extends AppCompatActivity {
                 }
             }
         });
+
+
     }
 
     private double plus(int a, int b) {
