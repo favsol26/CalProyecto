@@ -37,14 +37,8 @@ public class Calculator extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calcular);
 
-        sign = (Button) findViewById(R.id.button_sign);
         point = (Button) findViewById(R.id.button_point);
-        product = (Button) findViewById(R.id.button_product);
-        divide = (Button) findViewById(R.id.button_divide);
-        minus = (Button) findViewById(R.id.button_minus);
-        plus = (Button) findViewById(R.id.button_plus);
         history = (Button) findViewById(R.id.button_history);
-        erase = (Button) findViewById(R.id.button_back);
 
 
         zero = (Button) findViewById(R.id.button_0);
