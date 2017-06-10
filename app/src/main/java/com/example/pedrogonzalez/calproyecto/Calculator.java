@@ -47,8 +47,8 @@ public class Calculator extends AppCompatActivity {
                 if (p < 1) {
                     p++;
                     exit = (TextView) findViewById(R.id.screen);
-                    Variable = exit.getText().toString() + POINT;
-                    exit.setText(Variable);
+                    InComing  = exit.getText().toString() + POINT;
+                    exit.setText(InComing);
                 }
             }
         });
