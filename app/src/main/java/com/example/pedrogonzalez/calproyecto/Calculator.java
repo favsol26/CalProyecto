@@ -245,9 +245,6 @@ public class Calculator extends AppCompatActivity {
                 if (op == 4) {
                     Variable = (divide(num1, num2));
                 }
-
-
-
                 exit.setText(Variable);
             }
         });
