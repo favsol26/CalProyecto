@@ -32,7 +32,7 @@ public class Calculator extends AppCompatActivity {
 
     double num1, num2;
     TextView exit;
-    String Variable;
+    String InComing;
 
 
     @Override
@@ -61,8 +61,8 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 exit = (TextView) findViewById(R.id.screen);
-                Variable = exit.getText().toString() + ZERO;
-                exit.setText(Variable);
+                InComing = exit.getText().toString() + ZERO;
+                exit.setText(InComing);
             }
         });
 
@@ -71,8 +71,8 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 exit = (TextView) findViewById(R.id.screen);
-                Variable = exit.getText().toString() + ONE;
-                exit.setText(Variable);
+                InComing = exit.getText().toString() + ONE;
+                exit.setText(InComing);
             }
         });
         two = (Button) findViewById(R.id.button_2);
@@ -80,8 +80,8 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 exit = (TextView) findViewById(R.id.screen);
-                Variable = exit.getText().toString() + TWO;
-                exit.setText(Variable);
+                InComing = exit.getText().toString() + TWO;
+                exit.setText(InComing);
             }
         });
         three = (Button) findViewById(R.id.button_3);
@@ -89,8 +89,8 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 exit = (TextView) findViewById(R.id.screen);
-                Variable = exit.getText().toString() + THREE;
-                exit.setText(Variable);
+                InComing = exit.getText().toString() + THREE;
+                exit.setText(InComing);
             }
         });
         four = (Button) findViewById(R.id.button_4);
@@ -98,8 +98,8 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 exit = (TextView) findViewById(R.id.screen);
-                Variable = exit.getText().toString() + FOUR;
-                exit.setText(Variable);
+                InComing = exit.getText().toString() + FOUR;
+                exit.setText(InComing);
             }
         });
         five = (Button) findViewById(R.id.button_5);
@@ -107,8 +107,8 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 exit = (TextView) findViewById(R.id.screen);
-                Variable = exit.getText().toString() + FIVE;
-                exit.setText(Variable);
+                InComing = exit.getText().toString() + FIVE;
+                exit.setText(InComing);
             }
         });
         six = (Button) findViewById(R.id.button_6);
@@ -116,8 +116,8 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 exit = (TextView) findViewById(R.id.screen);
-                Variable = exit.getText().toString() + SIX;
-                exit.setText(Variable);
+                InComing = exit.getText().toString() + SIX;
+                exit.setText(InComing);
             }
         });
         seven = (Button) findViewById(R.id.button_7);
@@ -125,8 +125,8 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 exit = (TextView) findViewById(R.id.screen);
-                Variable = exit.getText().toString() + SEVEN;
-                exit.setText(Variable);
+                InComing = exit.getText().toString() + SEVEN;
+                exit.setText(InComing);
             }
         });
         eight = (Button) findViewById(R.id.button_8);
@@ -134,8 +134,8 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 exit = (TextView) findViewById(R.id.screen);
-                Variable = exit.getText().toString() + EIGHT;
-                exit.setText(Variable);
+                InComing = exit.getText().toString() + EIGHT;
+                exit.setText(InComing);
             }
         });
         nine = (Button) findViewById(R.id.button_9);
@@ -143,8 +143,8 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 exit = (TextView) findViewById(R.id.screen);
-                Variable = exit.getText().toString() + NINE;
-                exit.setText(Variable);
+                InComing = exit.getText().toString() + NINE;
+                exit.setText(InComing);
             }
         });
         clean = (Button) findViewById(R.id.clean);
@@ -162,8 +162,8 @@ public class Calculator extends AppCompatActivity {
             public void onClick(View v) {
                 exit = (TextView) findViewById(R.id.screen);
                 if (exit.getText().length() > 0) {
-                    Variable = Variable.substring(0, exit.getText().length() - 1);
-                    exit.setText(Variable);
+                    InComing = InComing.substring(0, exit.getText().length() - 1);
+                    exit.setText(InComing);
                 }
             }
         });
@@ -228,27 +228,30 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 exit = (TextView) findViewById(R.id.screen);
-                num2 = Double.valueOf(exit.getText().toString());
+                if (exit.getText().length() > 0) {
+                    num2 = Double.valueOf(exit.getText().toString());
 
-                if (op == 1) {
-                    Variable = String.valueOf(plus(num1, num2));
-                }
+                    if (op == 1) {
+                        InComing = String.valueOf(plus(num1, num2));
+                    }
 
-                if (op == 2) {
-                    Variable = String.valueOf(minus(num1, num2));
-                }
+                    if (op == 2) {
+                        InComing = String.valueOf(minus(num1, num2));
+                    }
 
-                if (op == 3) {
-                    Variable = String.valueOf(product(num1, num2));
+
+                    if (op == 3) {
+                        InComing = String.valueOf(product(num1, num2));
+                    }
+
+                    if (op == 4) {
+                        InComing = (divide(num1, num2));
+                    }
+                    exit.setText(InComing);
+
                 }
-                if (op == 4) {
-                    Variable = (divide(num1, num2));
-                }
-                exit.setText(Variable);
             }
         });
-
-
     }
 
     private double plus(double a, double b) {
@@ -284,7 +287,7 @@ public class Calculator extends AppCompatActivity {
             data = String.valueOf(result);
             //String his = String.format("%s+%s = %s", a, b, result);
         } else {
-            data = "ZERO DIVIDE";
+            data = ("Error");
         }
         return data;
     }
