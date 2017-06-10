@@ -240,19 +240,23 @@ public class Calculator extends AppCompatActivity {
     private double plus(double a, double b) {
         double result;
         result = a + b;
-        //String his = String.format("%s+%s", a, b);
+        //String his = String.format("%s+%s = %s", a, b, result);
         return result;
     }
 
     private double minus(double a, double b) {
         double result;
         result = a - b;
+        //String his = String.format("%s-%s = %s", a, b, result);
+
         return result;
     }
 
     private double product(double a, double b) {
         double result;
         result = a * b;
+        //String his = String.format("%s*%s = %s", a, b, result);
+
         return result;
     }
 
@@ -262,6 +266,8 @@ public class Calculator extends AppCompatActivity {
         if (b != 0) {
             result = a / b;
             data = String.valueOf(result);
+            //String his = String.format("%s+%s = %s", a, b, result);
+
         } else {
             data = "ZERO DIVIDE";
         }
