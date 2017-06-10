@@ -26,9 +26,10 @@ public class Calculator extends AppCompatActivity {
             point, sign, product, divide, minus,
             plus, erase, equals, history, clean;
 
+    int op;
+    double num1, num2;
     TextView exit;
     String Variable;
-    int result;
 
 
     @Override
@@ -42,7 +43,6 @@ public class Calculator extends AppCompatActivity {
         divide = (Button) findViewById(R.id.button_divide);
         minus = (Button) findViewById(R.id.button_minus);
         plus = (Button) findViewById(R.id.button_plus);
-        equals = (Button) findViewById(R.id.button_equal);
         history = (Button) findViewById(R.id.button_history);
         erase = (Button) findViewById(R.id.button_back);
 
@@ -159,29 +159,118 @@ public class Calculator extends AppCompatActivity {
             }
         });
 
+        plus = (Button) findViewById(R.id.button_plus);
+        plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                op = 1;
+                exit = (TextView) findViewById(R.id.screen);
+                num1 = Double.valueOf(exit.getText().toString());
+                exit.setText("");
+            }
+        });
+
+
+        minus = (Button) findViewById(R.id.button_minus);
+        minus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                op = 2;
+                exit = (TextView) findViewById(R.id.screen);
+                num1 = Double.valueOf(exit.getText().toString());
+                exit.setText("");
+            }
+        });
+        product = (Button) findViewById(R.id.button_product);
+        product.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                op = 3;
+                exit = (TextView) findViewById(R.id.screen);
+                num1 = Double.valueOf(exit.getText().toString());
+                exit.setText("");
+            }
+        });
+        divide = (Button) findViewById(R.id.button_divide);
+        divide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                op = 4;
+                exit = (TextView) findViewById(R.id.screen);
+                num1 = Double.valueOf(exit.getText().toString());
+                exit.setText("");
+            }
+        });
+
+        sign = (Button) findViewById(R.id.button_sign);
+        sign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                op = 5;
+                exit = (TextView) findViewById(R.id.screen);
+                num1 = Double.valueOf(exit.getText().toString()) * (-1);
+                exit.setText(String.valueOf(num1));
+            }
+        });
+
+        equals = (Button) findViewById(R.id.button_equal);
+
+        equals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                exit = (TextView) findViewById(R.id.screen);
+                num2 = Double.valueOf(exit.getText().toString());
+
+                if (op == 1) {
+                    Variable = String.valueOf(plus(num1, num2));
+                }
+
+                if (op == 2) {
+                    Variable = String.valueOf(minus(num1, num2));
+                }
+
+                if (op == 3) {
+                    Variable = String.valueOf(product(num1, num2));
+                }
+
+                if (op == 4) {
+                    Variable = (divide(num1, num2));
+                }
+                exit.setText(Variable);
+            }
+        });
+
 
     }
 
-    private double plus(int a, int b) {
+    private double plus(double a, double b) {
+        double result;
         result = a + b;
+        //String his = String.format("%s+%s", a, b);
         return result;
     }
 
-    private double minus(int a, int b) {
+    private double minus(double a, double b) {
+        double result;
         result = a - b;
         return result;
     }
 
-    private double product(int a, int b) {
+    private double product(double a, double b) {
+        double result;
         result = a * b;
         return result;
     }
 
-    private double divide(int a, int b) { 
-        int result = 0; 
+    private String divide(double a, double b) {
+        double result;
+        String data;
         if (b != 0) {
             result = a / b;
+            data = String.valueOf(result);
+        } else {
+            data = "ZERO DIVIDE";
         }
-        return result;
+        return data;
     }
 }
