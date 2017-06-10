@@ -19,6 +19,8 @@ public class Calculator extends AppCompatActivity {
     public static final String SEVEN = "7";
     public static final String EIGHT = "8";
     public static final String NINE = "9";
+    public static final String POINT = ".";
+
 
 
     Button zero, one, two, three, four,
@@ -26,7 +28,8 @@ public class Calculator extends AppCompatActivity {
             point, sign, product, divide, minus,
             plus, erase, equals, history, clean;
 
-    int op;
+    int op, p = 0;
+
     double num1, num2;
     TextView exit;
     String Variable;
@@ -38,6 +41,18 @@ public class Calculator extends AppCompatActivity {
         setContentView(R.layout.activity_calcular);
 
         point = (Button) findViewById(R.id.button_point);
+        point.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (p < 1) {
+                    p++;
+                    exit = (TextView) findViewById(R.id.screen);
+                    Variable = exit.getText().toString() + POINT;
+                    exit.setText(Variable);
+                }
+            }
+        });
+
         history = (Button) findViewById(R.id.button_history);
 
 
@@ -230,6 +245,9 @@ public class Calculator extends AppCompatActivity {
                 if (op == 4) {
                     Variable = (divide(num1, num2));
                 }
+
+
+
                 exit.setText(Variable);
             }
         });
@@ -252,7 +270,7 @@ public class Calculator extends AppCompatActivity {
 
         return result;
     }
-  
+
     private double product(double a, double b) {
         double result;
 
