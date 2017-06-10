@@ -28,7 +28,6 @@ public class Calculator extends AppCompatActivity {
 
     TextView exit;
     String Variable;
-    int result;
 
 
     @Override
@@ -161,16 +160,19 @@ public class Calculator extends AppCompatActivity {
     }
 
     private double plus(int a, int b) {
+        int result;
         result = a + b;
         return result;
     }
 
     private double minus(int a, int b) {
+        int result;
         result = a - b;
         return result;
     }
 
     private double product(int a, int b) {
+        int result;
         result = a * b;
         return result;
     }
@@ -181,5 +183,6 @@ public class Calculator extends AppCompatActivity {
             result = a / b;
         }
         return result;
+
     }
 }

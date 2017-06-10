@@ -20,5 +20,5 @@
     <string name="point">.</string>
     <string name="sign">+/-</string>
     <string name="equal">=</string>
-    <string name="history">Historial</string>
+    <string name="history">H</string>
 </resources>
