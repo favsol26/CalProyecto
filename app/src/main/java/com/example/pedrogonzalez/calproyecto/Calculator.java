@@ -241,7 +241,6 @@ public class Calculator extends AppCompatActivity {
                 if (op == 3) {
                     Variable = String.valueOf(product(num1, num2));
                 }
-
                 if (op == 4) {
                     Variable = (divide(num1, num2));
                 }
