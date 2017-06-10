@@ -246,14 +246,16 @@ public class Calculator extends AppCompatActivity {
 
     private double minus(double a, double b) {
         double result;
+
         result = a - b;
         //String his = String.format("%s-%s = %s", a, b, result);
 
         return result;
     }
-
+  
     private double product(double a, double b) {
         double result;
+
         result = a * b;
         //String his = String.format("%s*%s = %s", a, b, result);
 

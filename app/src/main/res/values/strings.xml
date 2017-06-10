@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">CalProyecto</string>
     <string name="my_divide">/</string>
-    <string name="button_clean">C</string>
+    <string name="button_clean">AC</string>
     <string name="product">*</string>
-    <string name="back">atras</string>
+    <string name="back">DEL</string>
     <string name="seven">7</string>
     <string name="eight">8</string>
     <string name="nine">9</string>
@@ -20,5 +20,5 @@
     <string name="point">.</string>
     <string name="sign">+/-</string>
     <string name="equal">=</string>
-    <string name="history">Historial</string>
+    <string name="history">H</string>
 </resources>
