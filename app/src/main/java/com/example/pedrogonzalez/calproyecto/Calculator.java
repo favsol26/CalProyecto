@@ -267,7 +267,6 @@ public class Calculator extends AppCompatActivity {
             result = a / b;
             data = String.valueOf(result);
             //String his = String.format("%s+%s = %s", a, b, result);
-
         } else {
             data = "ZERO DIVIDE";
         }
