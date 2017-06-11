@@ -22,23 +22,33 @@ public class Calculator extends AppCompatActivity {
     public static final String POINT = ".";
 
 
-
     Button zero, one, two, three, four,
             five, six, seven, eight, nine,
             point, sign, product, divide, minus,
             plus, erase, equals, history, clean;
 
-    int op, p = 0;
+    int op, pos = 0, p = 0;
 
     double num1, num2;
     TextView exit;
     String InComing;
+    String past[] = new String[5];
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calcular);
+
+        history = (Button) findViewById(R.id.button_history);
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                exit = (TextView) findViewById(R.id.screen);
+                InComing = past[0];
+                exit.setText(InComing);
+            }
+        });
 
         point = (Button) findViewById(R.id.button_point);
         point.setOnClickListener(new View.OnClickListener() {
@@ -47,14 +57,15 @@ public class Calculator extends AppCompatActivity {
                 if (p < 1) {
                     p++;
                     exit = (TextView) findViewById(R.id.screen);
+
+                    InComing = exit.getText().toString() + POINT;
+                  
                     InComing  = exit.getText().toString() + POINT;
+                  
                     exit.setText(InComing);
                 }
             }
         });
-
-        history = (Button) findViewById(R.id.button_history);
-
 
         zero = (Button) findViewById(R.id.button_0);
         zero.setOnClickListener(new View.OnClickListener() {
@@ -75,6 +86,7 @@ public class Calculator extends AppCompatActivity {
                 exit.setText(InComing);
             }
         });
+
         two = (Button) findViewById(R.id.button_2);
         two.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +96,7 @@ public class Calculator extends AppCompatActivity {
                 exit.setText(InComing);
             }
         });
+
         three = (Button) findViewById(R.id.button_3);
         three.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,6 +104,7 @@ public class Calculator extends AppCompatActivity {
                 exit = (TextView) findViewById(R.id.screen);
                 InComing = exit.getText().toString() + THREE;
                 exit.setText(InComing);
+
             }
         });
         four = (Button) findViewById(R.id.button_4);
@@ -102,6 +116,7 @@ public class Calculator extends AppCompatActivity {
                 exit.setText(InComing);
             }
         });
+
         five = (Button) findViewById(R.id.button_5);
         five.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,6 +126,7 @@ public class Calculator extends AppCompatActivity {
                 exit.setText(InComing);
             }
         });
+
         six = (Button) findViewById(R.id.button_6);
         six.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,8 +134,10 @@ public class Calculator extends AppCompatActivity {
                 exit = (TextView) findViewById(R.id.screen);
                 InComing = exit.getText().toString() + SIX;
                 exit.setText(InComing);
+
             }
         });
+
         seven = (Button) findViewById(R.id.button_7);
         seven.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,8 +145,10 @@ public class Calculator extends AppCompatActivity {
                 exit = (TextView) findViewById(R.id.screen);
                 InComing = exit.getText().toString() + SEVEN;
                 exit.setText(InComing);
+
             }
         });
+
         eight = (Button) findViewById(R.id.button_8);
         eight.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,8 +156,10 @@ public class Calculator extends AppCompatActivity {
                 exit = (TextView) findViewById(R.id.screen);
                 InComing = exit.getText().toString() + EIGHT;
                 exit.setText(InComing);
+
             }
         });
+
         nine = (Button) findViewById(R.id.button_9);
         nine.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -145,14 +167,20 @@ public class Calculator extends AppCompatActivity {
                 exit = (TextView) findViewById(R.id.screen);
                 InComing = exit.getText().toString() + NINE;
                 exit.setText(InComing);
+
             }
         });
+
         clean = (Button) findViewById(R.id.clean);
         clean.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 exit.setText("");
+                p = 0;
+                num1 = 0;
+                num2 = 0;
             }
+
 
         });
 
@@ -162,6 +190,7 @@ public class Calculator extends AppCompatActivity {
             public void onClick(View v) {
                 exit = (TextView) findViewById(R.id.screen);
                 if (exit.getText().length() > 0) {
+//                    if(true)
                     InComing = InComing.substring(0, exit.getText().length() - 1);
                     exit.setText(InComing);
                 }
@@ -172,10 +201,14 @@ public class Calculator extends AppCompatActivity {
         plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                op = 1;
                 exit = (TextView) findViewById(R.id.screen);
-                num1 = Double.valueOf(exit.getText().toString());
-                exit.setText("");
+                if (exit.getText().length() > 0 && !exit.getText().equals(POINT)) {
+
+                    op = 1;
+                    num1 = Double.valueOf(exit.getText().toString());
+                    exit.setText("");
+                    p = 0;
+                }
             }
         });
 
@@ -184,31 +217,43 @@ public class Calculator extends AppCompatActivity {
         minus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                op = 2;
                 exit = (TextView) findViewById(R.id.screen);
-                num1 = Double.valueOf(exit.getText().toString());
-                exit.setText("");
+                if (exit.getText().length() > 0 && !exit.getText().equals(POINT)) {
+                    op = 2;
+                    num1 = Double.valueOf(exit.getText().toString());
+                    exit.setText("");
+                    p = 0;
+                }
             }
         });
+
 
         product = (Button) findViewById(R.id.button_product);
         product.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                op = 3;
                 exit = (TextView) findViewById(R.id.screen);
-                num1 = Double.valueOf(exit.getText().toString());
-                exit.setText("");
+                if (exit.getText().length() > 0 && !exit.getText().equals(POINT)) {
+                    op = 3;
+                    num1 = Double.valueOf(exit.getText().toString());
+                    exit.setText("");
+                    p = 0;
+                }
             }
         });
+
+
         divide = (Button) findViewById(R.id.button_divide);
         divide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                op = 4;
                 exit = (TextView) findViewById(R.id.screen);
-                num1 = Double.valueOf(exit.getText().toString());
-                exit.setText("");
+                if (exit.getText().length() > 0 && !exit.getText().equals(POINT)) {
+                    op = 4;
+                    num1 = Double.valueOf(exit.getText().toString());
+                    exit.setText("");
+                    p = 0;
+                }
             }
         });
 
@@ -216,10 +261,12 @@ public class Calculator extends AppCompatActivity {
         sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                op = 5;
                 exit = (TextView) findViewById(R.id.screen);
-                num1 = Double.valueOf(exit.getText().toString()) * (-1);
-                exit.setText(String.valueOf(num1));
+
+                if (exit.getText().length() > 0 && !exit.getText().equals(POINT)) {
+                    num2 = Double.valueOf(exit.getText().toString()) * (-1);
+                    exit.setText(String.valueOf(num2));
+                }
             }
         });
 
@@ -228,8 +275,11 @@ public class Calculator extends AppCompatActivity {
         equals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 exit = (TextView) findViewById(R.id.screen);
-                if (exit.getText().length() > 0) {
+                pos = 0;
+
+                if (exit.getText().length() > 0 && !exit.getText().equals(POINT)) {
                     num2 = Double.valueOf(exit.getText().toString());
 
                     if (op == 1) {
@@ -240,7 +290,6 @@ public class Calculator extends AppCompatActivity {
                         InComing = String.valueOf(minus(num1, num2));
                     }
 
-
                     if (op == 3) {
                         InComing = String.valueOf(product(num1, num2));
                     }
@@ -249,7 +298,6 @@ public class Calculator extends AppCompatActivity {
                         InComing = (divide(num1, num2));
                     }
                     exit.setText(InComing);
-
                 }
             }
         });
@@ -258,7 +306,9 @@ public class Calculator extends AppCompatActivity {
     private double plus(double a, double b) {
         double result;
         result = a + b;
-        //String his = String.format("%s+%s = %s", a, b, result);
+        String his = String.format("%s+%s = %s", a, b, result);
+        past[pos] = his;
+
         return result;
     }
 
@@ -266,8 +316,8 @@ public class Calculator extends AppCompatActivity {
         double result;
 
         result = a - b;
-        //String his = String.format("%s-%s = %s", a, b, result);
-
+        String his = String.format("%s-%s = %s", a, b, result);
+        past[pos] = his;
         return result;
     }
 
@@ -275,8 +325,8 @@ public class Calculator extends AppCompatActivity {
         double result;
 
         result = a * b;
-        //String his = String.format("%s*%s = %s", a, b, result);
-
+        String his = String.format("%s*%s = %s", a, b, result);
+        past[0] = his;
         return result;
     }
 
@@ -286,7 +336,8 @@ public class Calculator extends AppCompatActivity {
         if (b != 0) {
             result = a / b;
             data = String.valueOf(result);
-            //String his = String.format("%s+%s = %s", a, b, result);
+            String his = String.format("%s/%s = %s", a, b, result);
+            past[pos] = his;
         } else {
             data = ("Error");
         }
