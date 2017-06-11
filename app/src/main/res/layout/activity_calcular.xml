@@ -1,23 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.pedrogonzalez.calproyecto.Calculator"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.pedrogonzalez.calproyecto.Calculator">
+     android:layout_height="match_parent">
 
 
-    <TextView
-        android:id="@+id/screen"
+
+
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150sp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="@android:color/white"
-        android:ellipsize="end"
-        android:gravity="end"
-        android:textSize="45sp"
-        android:maxLength="13"
-        android:maxLines="2" />
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/screen"
+            android:layout_width="match_parent"
+            android:layout_height="210sp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/white"
+            android:ellipsize="end"
+            android:gravity="end"
+            android:textSize="45sp"
+            android:maxLength="13"
+
+            android:maxLines="2" />
+
 
     <Button
         android:id="@+id/clean"
@@ -259,6 +272,10 @@
         android:text="@string/history"
         android:textColor="@color/colorTxt"
         android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>
 
