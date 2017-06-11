@@ -341,6 +341,7 @@ public class Calculator extends AppCompatActivity {
         } else {
             data = ("Error");
         }
+
         return data;
     }
 }
